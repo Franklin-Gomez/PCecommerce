@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  nombre String
+  email  String @unique
+  password String
+  creadoEn DateTime @default(now())
+}
+
+model Producto {
+  id            Int       @id @default(autoincrement())
+  nombre        String
+  descripcion   String?
+  marca         String
+  modelo        String
+  precio        Decimal
+  descuento     Decimal?  // porcentaje
+  stock         Int       @default(0)
+  ventas        Int       @default(0)
+  imagenUrl     String?
+  categoriaId   Int?
+  categoria     Categoria? @relation(fields: [categoriaId], references: [id])
+  creadoEn      DateTime  @default(now())
+  promocionId    Int?
+  promocion      Promocion? @relation(fields: [promocionId], references: [id])
+  actualizadoEn DateTime  @updatedAt
+}
+
+model Categoria {
+  id          Int        @id @default(autoincrement())
+  nombre      String     @unique
+  descripcion String?  
+  imagenUrl   String     @map("imagenUrl")
+  productos   Producto[]
+}  
+
+model Promocion {
+  id              Int       @id @default(autoincrement())
+  nombre          String
+  tipoDescuento   String     // Ejemplo: "porcentaje" o "fijo"
+  valorDescuento  Decimal    // Valor del descuento (ej. 10 para 10%)
+  fechaInicio     DateTime
+  fechaFin        DateTime
+  productos       Producto[] // Relación: una promoción puede aplicarse a varios productos
+}
