@@ -11,7 +11,7 @@ interface OferCardInterface {
     marca : string ;
 }
 
-export const OfertaCard = ( { imagenUrl  , id , nombre , descripcion , modelo , precioFinal , precioInicial , marca } : OferCardInterface   ) => {
+export const OfertaCard = ( { imagenUrl , nombre , descripcion , modelo , precioFinal , precioInicial , marca } : OferCardInterface   ) => {
 
     const addToCart = useCartStore(( state ) => state.addToCart)
 

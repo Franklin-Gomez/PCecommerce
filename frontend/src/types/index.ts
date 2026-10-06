@@ -1,4 +1,4 @@
-import { z, ZodXID } from "zod"
+import { z } from "zod"
 
 //============================ Categorias ============================
 

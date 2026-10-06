@@ -1,11 +1,10 @@
 import { useForm } from "react-hook-form"
 import { CiInstagram, CiTwitter } from "react-icons/ci"
 import { FaFacebookSquare } from "react-icons/fa"
-import { Link } from "react-router"
 
 export const Contacto = () => {
 
-    const { handleSubmit , setError , reset , register , formState : { errors } } = useForm({ defaultValues : {
+    const { handleSubmit , reset , register , formState : { errors } } = useForm({ defaultValues : {
         nombre : "",
         email : "",
         mensaje : ""

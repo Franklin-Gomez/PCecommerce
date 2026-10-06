@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query"
-import { Link } from "react-router"
 import { getAllOfertas } from "../api/ofertas"
 import { OfertaCard } from "../components/OfertaCard"
 
