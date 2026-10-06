@@ -2,11 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import { getAllCategorias } from "./api/categoriaAPI";
 import { CategoriaCards } from "./components/CategoriaCards";
 import type { CategoriasType } from "./types/index";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 
 function App() {
 
-  const navigate = useNavigate()
 
 
   const { data : categorias  , isLoading, isError  } = useQuery<CategoriasType>({
