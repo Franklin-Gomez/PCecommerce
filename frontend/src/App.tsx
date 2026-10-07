@@ -6,8 +6,6 @@ import { Link } from "react-router";
 
 function App() {
 
-
-
   const { data : categorias  , isLoading, isError  } = useQuery<CategoriasType>({
     queryKey : ["categorias"],
     queryFn : getAllCategorias,

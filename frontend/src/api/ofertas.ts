@@ -6,7 +6,7 @@ export const getAllOfertas = async () => {
 
     try {
         
-        const url = `${import.meta.env.VITE_API_URL}promocion/activas`
+        const url = `${import.meta.env.VITE_API_URL}/promocion/activas`
 
         const response = await axios.get( url )
 

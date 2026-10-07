@@ -27,7 +27,9 @@ export const createCategorias = async () => {
 export const getAllCategorias = async () => {
     try {
 
-        const url = `${import.meta.env.VITE_API_URL}categoria/categorias`;
+        const url = `${import.meta.env.VITE_API_URL}/categoria/categorias`;
+
+        console.log('URL de la API:', url); // Agrega este console.log para verificar la
 
         const response = await axios.get( url );
 

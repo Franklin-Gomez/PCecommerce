@@ -27,7 +27,7 @@ export const createProducts = async () => {
 export const getAllProduct = async () => {
    try {
 
-        const url = `${import.meta.env.VITE_API_URL}product/productos`;
+        const url = `${import.meta.env.VITE_API_URL}/product/productos`;
 
         const response = await axios.get( url );
 
